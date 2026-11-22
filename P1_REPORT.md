@@ -102,7 +102,6 @@ The program loads silently, uses only the allowed `lists` library,
 and contains no initialization directive or call to `halt/0`.
 
 ## Review against the eight supplied prompts
-
 | Prompt | Review result |
 | --- | --- |
 | 1 — Representation | Correct: exactly four friends in the required order, with each attribute value used once. |
