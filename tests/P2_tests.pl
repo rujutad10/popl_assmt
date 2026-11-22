@@ -2,7 +2,7 @@
 % P2 test file (separate from the solution).
 % Replace `id_q2` below with your real file name (path is relative to this file).
 % ---------------------------------------------------------------------------
-:- consult('../code/10_q2').
+:- consult('../code/2_q2').
 :- discontiguous p2_test/2.
 
 % ===========================================================================
