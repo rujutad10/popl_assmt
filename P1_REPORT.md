@@ -81,9 +81,7 @@ there are three. The earlier draft's claim that repair is impossible is
 also incorrect: although solutions 1 and 3 have the same attribute
 combinations assigned to different friends, solution 2 has a different
 combination and can be isolated by the ninth clue above.
-
 ## Verification and commands
-
 Validated using SWI-Prolog 9.2.9 on Windows. All 35 test cases pass, covering
 the two separate exclusions in clue 2, each clue in isolation, omission of
 each original clue, all original solutions, uniqueness after repair,
