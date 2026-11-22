@@ -119,3 +119,7 @@ From the repository root in PowerShell:
 & 'C:\Program Files\swipl\bin\swipl.exe' -q -f code/10_q1.pl -g 'count_solutions([1,2,3,4,5,6,7,8,9],N),writeln(N)' -t halt
 & 'C:\Program Files\swipl\bin\swipl.exe' -q -s tests/P1_tests.pl -g run_tests -t halt
 ```
+
+
+
+
