@@ -11,13 +11,6 @@
 ;; Returns the right subtree of a non-empty binary tree node.
 (define (tree-right t)
   (caddr t))
-```[cite: 3, 4]
-*(Press **Ctrl + S** to save).*
-
-**3. Open `prompts\S1.md` in VS Code and paste Prompt 1:**
-```markdown
-## Prompt 1: accessors
-Using the scheme-dev skill, write three small functions tree-value, tree-left, tree-right for a binary tree that is either () or (value left right). Use only car/cadr/caddr.
 
 ;; Returns the inorder traversal list (left, node, right) of tree t prepended to acc.
 (define (inorder t acc)
@@ -26,7 +19,7 @@ Using the scheme-dev skill, write three small functions tree-value, tree-left, t
       (inorder (tree-left t)
                (cons (tree-value t)
                      (inorder (tree-right t) acc)))))
-                     
+
 ;; Returns the preorder traversal list (node, left, right) of tree t prepended to acc.
 (define (preorder t acc)
   (if (null? t)
@@ -53,13 +46,6 @@ Using the scheme-dev skill, write three small functions tree-value, tree-left, t
                 (r (height-and-leaves (tree-right t))))
             (list (+ 1 (max (car l) (car r)))
                   (+ (cadr l) (cadr r)))))))
-```[cite: 3, 4]
-
-**2. Add Prompt 5 to the bottom of `prompts\S1.md` and press `Ctrl + S`:**
-```markdown
-Prompt 5: height and leaves
-
-Write (height-and-leaves t) that returns (list height leaf-count). Height of () is 0, a single node has height 1, a leaf is a node whose left and right are both (), and the empty tree has 0 leaves. Only whitelisted built-ins.
 
 ;; Prints the inorder traversal list of tree followed by a newline.
 (define (print-inorder tree)
@@ -79,12 +65,3 @@ Write (height-and-leaves t) that returns (list height leaf-count). Height of () 
 (define (print-height-and-leaves tree)
   (display (height-and-leaves tree))
   (newline))
-```[cite: 3, 4]
-
-*(Make sure there are NO test calls or `display` statements outside of these functions at the bottom of `code\2_q3.rkt`—the file must print nothing when loaded!)*[cite: 1]
-
-**2. Add Prompt 6 to the bottom of `prompts\S1.md` and press `Ctrl + S`:**
-```markdown
-Prompt 6: printing functions
-
-Write print-inorder, print-all-traversals (inorder, preorder, postorder on three lines) and print-height-and-leaves using the existing helpers. They must use display, and every function must end with a newline. Print nothing at load time.
