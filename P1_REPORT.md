@@ -1,4 +1,4 @@
-# P1 Report — Group 10
+# P1 Report — Group 2
 
 ## P1.a — Representation and solver
 
