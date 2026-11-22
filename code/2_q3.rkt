@@ -18,3 +18,11 @@
 ```markdown
 ## Prompt 1: accessors
 Using the scheme-dev skill, write three small functions tree-value, tree-left, tree-right for a binary tree that is either () or (value left right). Use only car/cadr/caddr.
+
+;; Returns the inorder traversal list (left, node, right) of tree t prepended to acc.
+(define (inorder t acc)
+  (if (null? t)
+      acc
+      (inorder (tree-left t)
+               (cons (tree-value t)
+                     (inorder (tree-right t) acc)))))
