@@ -68,8 +68,3 @@
               "(10000 1)\n")
 
 (displayln "All S1 tests passed!")
-```[cite: 4]
-
-**2. Run your tests in the terminal to verify everything passes (if Racket is installed on your machine):**
-```cmd
-cd tests && racket S1_tests.rkt && cd ..
