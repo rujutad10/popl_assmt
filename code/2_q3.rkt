@@ -42,3 +42,21 @@ Using the scheme-dev skill, write three small functions tree-value, tree-left, t
       (postorder (tree-left t)
                  (postorder (tree-right t)
                             (cons (tree-value t) acc)))))
+
+;; Returns a two-element list (height leaf-count) for binary tree t.
+(define (height-and-leaves t)
+  (if (null? t)
+      (list 0 0)
+      (if (and (null? (tree-left t)) (null? (tree-right t)))
+          (list 1 1)
+          (let ((l (height-and-leaves (tree-left t)))
+                (r (height-and-leaves (tree-right t))))
+            (list (+ 1 (max (car l) (car r)))
+                  (+ (cadr l) (cadr r)))))))
+```[cite: 3, 4]
+
+**2. Add Prompt 5 to the bottom of `prompts\S1.md` and press `Ctrl + S`:**
+```markdown
+Prompt 5: height and leaves
+
+Write (height-and-leaves t) that returns (list height leaf-count). Height of () is 0, a single node has height 1, a leaf is a node whose left and right are both (), and the empty tree has 0 leaves. Only whitelisted built-ins.
