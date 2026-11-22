@@ -60,3 +60,31 @@ Using the scheme-dev skill, write three small functions tree-value, tree-left, t
 Prompt 5: height and leaves
 
 Write (height-and-leaves t) that returns (list height leaf-count). Height of () is 0, a single node has height 1, a leaf is a node whose left and right are both (), and the empty tree has 0 leaves. Only whitelisted built-ins.
+
+;; Prints the inorder traversal list of tree followed by a newline.
+(define (print-inorder tree)
+  (display (inorder tree '()))
+  (newline))
+
+;; Prints the inorder, preorder, and postorder traversal lists of tree on three separate lines.
+(define (print-all-traversals tree)
+  (display (inorder tree '()))
+  (newline)
+  (display (preorder tree '()))
+  (newline)
+  (display (postorder tree '()))
+  (newline))
+
+;; Prints the (height leaf-count) list of tree followed by a newline.
+(define (print-height-and-leaves tree)
+  (display (height-and-leaves tree))
+  (newline))
+```[cite: 3, 4]
+
+*(Make sure there are NO test calls or `display` statements outside of these functions at the bottom of `code\2_q3.rkt`—the file must print nothing when loaded!)*[cite: 1]
+
+**2. Add Prompt 6 to the bottom of `prompts\S1.md` and press `Ctrl + S`:**
+```markdown
+Prompt 6: printing functions
+
+Write print-inorder, print-all-traversals (inorder, preorder, postorder on three lines) and print-height-and-leaves using the existing helpers. They must use display, and every function must end with a newline. Print nothing at load time.
