@@ -31,10 +31,11 @@ clue(1, S) :-
     Dept \= research,
     Name \= 'Dana'.
 
-% Clue 2
+% Clue 2: both exclusions must hold independently.
 clue(2, S) :-
     member(p('Alex',Dept,Lang,_), S),
-    \+ (Dept = development, Lang = 'c++').
+    Dept \= development,
+    Lang \= 'c++'.
 
 % Clue 3
 clue(3, S) :-
@@ -66,12 +67,9 @@ clue(8, S) :-
     member(p(_,research,Lang,data), S),
     Lang \= javascript.
 
-% Illustrative ninth clue:
-% The AI project uses Java, and the web project
-% belongs to someone in development.
+% CLUE 9: The friend who prefers the AI project likes Python.
 clue(9, S) :-
-    member(p(_,_,java,'AI'), S),
-    member(p(_,development,_,web), S).
+    member(p(_,_,python,'AI'), S).
 
 % Apply only the selected clues.
 satisfies([], _).
@@ -94,8 +92,7 @@ count_solutions(Active, N) :-
     findall(S, solution_for(Active,S), Solutions),
     length(Solutions,N).
 
-% P1.c: reports the count with clue 9.
-% This illustrative clue does not achieve uniqueness.
+% P1.c: reports the count after adding clue 9 (exactly one solution).
 repair(N) :-
     count_solutions([1,2,3,4,5,6,7,8,9], N).
 
