@@ -1,6 +1,6 @@
 % Run from the repository root:
 % swipl -q -s tests/P1_tests.pl -g run_tests -t halt
-:- ensure_loaded('../code/10_q1.pl').
+:- ensure_loaded('../code/2_q1.pl').
 
 :- begin_tests(p1).
 
