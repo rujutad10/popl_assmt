@@ -34,3 +34,11 @@ Using the scheme-dev skill, write three small functions tree-value, tree-left, t
       (cons (tree-value t)
             (preorder (tree-left t)
                       (preorder (tree-right t) acc)))))
+
+;; Returns the postorder traversal list (left, right, node) of tree t prepended to acc.
+(define (postorder t acc)
+  (if (null? t)
+      acc
+      (postorder (tree-left t)
+                 (postorder (tree-right t)
+                            (cons (tree-value t) acc)))))
