@@ -2,7 +2,7 @@
 :- use_module(library(lists)).
 
 expr_tree([N], num(N)).
-expr_tree(List, bin(Op, LeftTree, RightTree)) :-
+expr_tree(List, expr(Op, LeftTree, RightTree)) :-
     append(Left, Right, List),
     Left  = [_|_],
     Right = [_|_],
@@ -38,7 +38,9 @@ op_prec(-, 1).
 op_prec(*, 2).
 op_prec(/, 2).
 
+
 % format_expr(+Tree, +ParentOp, +Side, -String)
+
 format_expr(num(N), _, _, String) :-
     format(string(String), "~d", [N]).
 
